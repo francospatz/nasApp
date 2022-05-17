@@ -12,10 +12,10 @@ const Main = () => {
   return <main className='main'>
     <Routes>
       <Route element={<Home/>} path='/'></Route>
-      <Route element={<Landigs/>} path='/Landings'></Route>
-      <Route element={<Neas/>} path='/Neas'></Route>
-      {isAuthenticated ? <Route element={<Cart/>} path='/Cart'></Route> : ""}
-      {isAuthenticated ? <Route element={<Checkout/>} path='/Checkout'></Route> : ""}
+      <Route element={<Landigs/>} path='/landings'></Route>
+      <Route element={<Neas/>} path='/neas'></Route>
+      {isAuthenticated ? <Route element={<Cart/>} path='/cart'></Route> : ""}
+      {isAuthenticated ? <Route element={<Checkout/>} path='/checkout'></Route> : ""}
       
     </Routes>
   </main>;

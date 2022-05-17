@@ -237,23 +237,23 @@ const Header = () => {
         <Container maxWidth="xl">
           <Toolbar disableGutters >
             <RocketLaunchIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              NASAPP
-            </Typography>
+            <Link to="/" className="a2">
+                <Typography
+                  variant="h6"
+                  noWrap
+                  sx={{
+                    mr: 2,
+                    display: { xs: "none", md: "flex" },
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".3rem",
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
+                >
+                  NASAPP
+                </Typography>
+              </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -285,41 +285,40 @@ const Header = () => {
                 }}
               >
                 <MenuItem key={1} onClick={handleCloseNavMenu}>
-                  <Typography
-                    noWrap
-                    textalign="center"
-                    component="a"
-                    href="/landings"
-                    sx={{
-                      textDecoration: "none",
-                      color: "inherit"
-                    }}
-                  >
-                    Landings
-                  </Typography>
+                <Link to="/landings" className="a">
+                      <Typography
+                        noWrap
+                        textalign="center"
+                        sx={{
+                          textDecoration: "none",
+                          color: "inherit"
+                        }}
+                      >
+                        Landings
+                      </Typography>
+                    </Link>
                 </MenuItem>
                 <MenuItem key={2} onClick={handleCloseNavMenu}>
-                  <Typography
-                    noWrap
-                    textalign="center"
-                    component="a"
-                    href="/neas"
-                    sx={{
-                      textDecoration: "none",
-                      color: "inherit"
-                    }}
-                  >
-                    Neas
-                  </Typography>
+                <Link to="/neas" className="a">
+                      <Typography
+                        noWrap
+                        textalign="center"
+                        sx={{
+                          textDecoration: "none",
+                          color: "inherit"
+                        }}
+                      >
+                        Neas
+                      </Typography>
+                </Link>
                 </MenuItem>
               </Menu>
             </Box>
             <RocketLaunchIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <Link to="/">
             <Typography
               variant="h5"
               noWrap
-              component="a"
-              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -333,8 +332,9 @@ const Header = () => {
             >
               NASAPP
             </Typography>
+            </Link>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <a href="/landings" className="a">
+              <Link to="/landings" className="a">
                 <Button
                   key={3}
                   onClick={handleCloseNavMenu}
@@ -342,8 +342,8 @@ const Header = () => {
                 >
                   Landings
                 </Button>
-              </a>
-              <a href="/neas" className="a">
+              </Link>
+              <Link to="/neas" className="a">
                 <Button
                   key={4}
                   onClick={handleCloseNavMenu}
@@ -351,7 +351,7 @@ const Header = () => {
                 >
                   Neas
                 </Button>
-              </a>
+              </Link>
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
