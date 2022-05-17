@@ -315,7 +315,7 @@ const Header = () => {
               </Menu>
             </Box>
             <RocketLaunchIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Link to="/">
+            <Link to="/" className="a2">
             <Typography
               variant="h5"
               noWrap
