@@ -1,4 +1,4 @@
-# 🎬 NasApp
+# 🚀 NasApp
 
 Aplicación web para que, como usuario, puedas explorar Landings y Neas, tanto como solicitar su compra.
 
