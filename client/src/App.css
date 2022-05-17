@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  background-color: #0B3D91;
+}
+
+#root{
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+html{
+  height: 100vh;
+  background-color: #0B3D91;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.a {
+  text-decoration: none; 
+  color: black
+}
+
+.a2 {
+  text-decoration: none; 
+  color: white
+}
+
+.buy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: row;
+}
+
+.home-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  margin: 25px 2% 0 2%;
+}
+
+.home__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.login, .nasa-api {
+  width: 50vw;
+}
+
+#map { height: 100%; width: 100%; }
+
+.landings, .neas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.map-container {
+  width: 80vw;
+  height: 80vh;
+  margin: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  height: 100%;
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landings-list, .neas-list {
+  
+  margin: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.showing {
+  margin: 3%;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
