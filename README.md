@@ -72,5 +72,5 @@ REACT_APP_REDIRECT_URI=
 
 ```
 
-# 🤝 Developer
+# 🤘 Developer
 * 🎸 [Franco](https://github.com/francospatz "Franco")
