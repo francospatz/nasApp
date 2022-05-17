@@ -17,15 +17,15 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
-import { red } from '@mui/material/colors';
 
 const Header = () => {
-  const { user, isAuthenticated } = useAuth0();
-  const { loginWithRedirect } = useAuth0();
-  const { logout } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();// let's you check if user is authenticated and see user credentials
+  const { loginWithRedirect } = useAuth0(); // let's you login with auth0
+  const { logout } = useAuth0();// let's you logout with auth0
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
+  // makes MUI work
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -42,13 +42,13 @@ const Header = () => {
     setAnchorElUser(null);
   };
 
-  if (isAuthenticated) {
+  if (isAuthenticated) { // checks if user is authenticated and renders if true
     return (
       isAuthenticated && (
-        <AppBar position="static" style={{ background: red[600] }}>
+        <AppBar position="static" style={{ background: "#474056" }}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <RocketLaunchIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+              <RocketLaunchIcon sx={{ display: { xs: "none", md: "flex", color: "#B9C6AE", fontSize: 40 }, mr: 1 }} />
               <Link to="/" className="a2">
                 <Typography
                   variant="h6"
@@ -56,12 +56,15 @@ const Header = () => {
                   sx={{
                     mr: 2,
                     display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
                     fontWeight: 700,
                     letterSpacing: ".3rem",
-                    color: "inherit",
+                    color: "#090C08",
                     textDecoration: "none",
+                    fontSize: 30,
+                    fontFamily: 'Abril Fatface',
+                    fontStyle: 'italic'
                   }}
+                  className="NASAPP"
                 >
                   NASAPP
                 </Typography>
@@ -93,7 +96,7 @@ const Header = () => {
                   open={Boolean(anchorElNav)}
                   onClose={handleCloseNavMenu}
                   sx={{
-                    display: { xs: "block", md: "none" },
+                    display: { xs: "block", md: "none" }
                   }}
                 >
                   <MenuItem key={1} onClick={handleCloseNavMenu}>
@@ -103,7 +106,7 @@ const Header = () => {
                         textalign="center"
                         sx={{
                           textDecoration: "none",
-                          color: "inherit"
+                          color: "#8A95A5"
                         }}
                       >
                         Landings
@@ -117,7 +120,7 @@ const Header = () => {
                         textalign="center"
                         sx={{
                           textDecoration: "none",
-                          color: "inherit"
+                          color: "#8A95A5"
                         }}
                       >
                         Neas
@@ -131,7 +134,7 @@ const Header = () => {
                         textalign="center"
                         sx={{
                           textDecoration: "none",
-                          color: "inherit"
+                          color: "#8A95A5"
                         }}
                       >
                         Cart
@@ -140,7 +143,7 @@ const Header = () => {
                   </MenuItem>
                 </Menu>
               </Box>
-              <RocketLaunchIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+              <RocketLaunchIcon sx={{ display: { xs: "flex", md: "none", color: "#B9C6AE", fontSize: 40 }, mr: 1 }} />
               <Link to="/" className="a2">
                 <Typography
                   variant="h5"
@@ -149,11 +152,13 @@ const Header = () => {
                     mr: 2,
                     display: { xs: "flex", md: "none" },
                     flexGrow: 1,
-                    fontFamily: "monospace",
                     fontWeight: 700,
+                    fontSize: 30,
                     letterSpacing: ".3rem",
-                    color: "inherit",
+                    color: "#090C08",
                     textDecoration: "none",
+                    fontFamily: 'Abril Fatface',
+                    fontStyle: 'italic'
                   }}
                 >
                   NASAPP
@@ -164,7 +169,7 @@ const Header = () => {
                   <Button
                     key={3}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, color: "#8A95A5", display: "block" }}
                   >
                     Landings
                   </Button>
@@ -173,7 +178,7 @@ const Header = () => {
                   <Button
                     key={4}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, color: "#8A95A5", display: "block" }}
                   >
                     Neas
                   </Button>
@@ -182,7 +187,7 @@ const Header = () => {
                   <Button
                     key={5}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, color: "#8A95A5", display: "block" }}
                   >
                     Cart
                   </Button>
@@ -231,12 +236,12 @@ const Header = () => {
         </AppBar>
       )
     );
-  } else {
+  } else { // renders if isAuthenticated is false
     return (
-      <AppBar position="static" style={{ background: red[600] }}>
+      <AppBar position="static" style={{ background: "#474056" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters >
-            <RocketLaunchIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <RocketLaunchIcon sx={{ display: { xs: "none", md: "flex", color: "#B9C6AE", fontSize: 40 }, mr: 1 }} />
             <Link to="/" className="a2">
                 <Typography
                   variant="h6"
@@ -244,11 +249,13 @@ const Header = () => {
                   sx={{
                     mr: 2,
                     display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
                     fontWeight: 700,
                     letterSpacing: ".3rem",
-                    color: "inherit",
+                    color: "#090C08",
                     textDecoration: "none",
+                    fontSize: 30,
+                    fontFamily: 'Abril Fatface',
+                    fontStyle: 'italic'
                   }}
                 >
                   NASAPP
@@ -291,7 +298,7 @@ const Header = () => {
                         textalign="center"
                         sx={{
                           textDecoration: "none",
-                          color: "inherit"
+                          color: "#8A95A5"
                         }}
                       >
                         Landings
@@ -305,7 +312,7 @@ const Header = () => {
                         textalign="center"
                         sx={{
                           textDecoration: "none",
-                          color: "inherit"
+                          color: "#8A95A5"
                         }}
                       >
                         Neas
@@ -314,7 +321,7 @@ const Header = () => {
                 </MenuItem>
               </Menu>
             </Box>
-            <RocketLaunchIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <RocketLaunchIcon sx={{ display: { xs: "flex", md: "none", color: "#B9C6AE", fontSize: 40 }, mr: 1 }} />
             <Link to="/" className="a2">
             <Typography
               variant="h5"
@@ -326,8 +333,10 @@ const Header = () => {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: "#090C08",
                 textDecoration: "none",
+                fontSize: 30,
+                fontStyle: 'italic'
               }}
             >
               NASAPP
@@ -338,7 +347,7 @@ const Header = () => {
                 <Button
                   key={3}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 2, color: "#8A95A5", display: "block" }}
                 >
                   Landings
                 </Button>
@@ -347,7 +356,7 @@ const Header = () => {
                 <Button
                   key={4}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 2, color: "#8A95A5", display: "block" }}
                 >
                   Neas
                 </Button>
@@ -355,8 +364,8 @@ const Header = () => {
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
-              <Button textalign="center" sx={{ color: "white" }} onClick={() => loginWithRedirect()}>
-                <LoginIcon sx={{ mr: 1 }} />Login
+              <Button textalign="center" sx={{ color: "#8A95A5" }} onClick={() => loginWithRedirect()}>
+                <LoginIcon sx={{ mr: 1, color: "#8A95A5" }} />Login
               </Button>
             </Box>
           </Toolbar>

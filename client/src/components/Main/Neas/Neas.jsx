@@ -6,11 +6,11 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const Neas = () => {
   const [deps, setDeps] = useState("neas");
-  const { loading, result } = useFetch(
+  const { loading, result } = useFetch( // makes request with custom hook useFetch
     "/api/astronomy/" + deps
   );
 
-  const changeDeps = (dep) => {
+  const changeDeps = (dep) => { // sets deps, which makes custom hook uiseFetch send a request
     setDeps(dep)
   }
 
@@ -18,7 +18,7 @@ const Neas = () => {
     <div className="neas">
       <div className="list-container">{loading ? 
         <Box sx={{ display: 'flex' }}>
-          <CircularProgress />
+          <CircularProgress sx={{color: "#B9C6AE"}}/>
         </Box>  
         : 
         <List data={result} changeDeps={changeDeps}/>}</div>

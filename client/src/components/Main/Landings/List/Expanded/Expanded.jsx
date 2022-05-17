@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { CartContext } from "../../../../../context/cartContext";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const ExpandMore = styled((props) => {
+const ExpandMore = styled((props) => { // MUI styles
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
@@ -21,13 +21,13 @@ const Expanded = (props) => {
   const { isAuthenticated } = useAuth0();
   const [expanded, setExpanded] = useState(false);
   const [added, setAdded] = useState(false);
-  const { addProduct } = useContext(CartContext);
+  const { addProduct } = useContext(CartContext); // consumes function from context
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  if (isAuthenticated) {
+  if (isAuthenticated) { // if user is authenticated, there's printed in the card a "buy" button
     return (
       <div>
         <CardActions disableSpacing>
@@ -35,8 +35,8 @@ const Expanded = (props) => {
             addProduct(props.data.name);
             setAdded(!added);
           }}>
-            <ShoppingCartIcon/>
-            <Typography paragraph sx={{margin: 0}}>{added ? "Remove from cart" : "Add to cart"}</Typography>
+            <ShoppingCartIcon sx={{color: "#757083"}}/>
+            <Typography paragraph sx={{margin: 0, color: "#757083"}}>{added ? "Remove from cart" : "Add to cart"}</Typography>
           </Button>
           <ExpandMore
             expand={expanded}

@@ -15,15 +15,15 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const Demo = styled('div')(({ theme }) => ({
+const Demo = styled('div')(({ theme }) => ({ //styles for MUI
   backgroundColor: theme.palette.background.paper,
 }));
 
 const Cart = () => {
   const { cart, addProduct, setCart } = useContext(CartContext);
-  const [reRender, setReRender] = useState(false);
+  const [reRender, setReRender] = useState(false); 
 
-  const handleReRender = () => {
+  const handleReRender = () => { // handles rerender since changes on context don't rerender as changes on states do
     setReRender(!reRender)
   }
 
@@ -31,7 +31,7 @@ const Cart = () => {
     //localCart() // arreglar lectura del localStorage
   });
 
-  const checkout = () => {
+  const checkout = () => { // removes localstorage item
     setCart([]);
     localStorage.removeItem("cart");
   }
@@ -40,14 +40,14 @@ const Cart = () => {
     return (
         <div className="cart">
         <Box sx={{ flexGrow: 1, maxWidth: 752 }} className="cart-items">
-          <Typography sx={{ mt: 4, mb: 2, color: "white" }} variant="h3" component="div" className="your-cart">
+          <Typography sx={{ mt: 4, mb: 2, color: "#B9C6AE", fontStyle: 'italic', fontFamily: 'Abril Fatface' }} variant="h3" component="div" className="your-cart">
             Your cart
           </Typography>
           <Demo>
-            <List>
+            <List sx={{background: "#8A95A5"}}>
               {cart.map((product, i) => <ListItem key={i}
                 secondaryAction={
-                  <IconButton edge="end" aria-label="delete" onClick={() => {
+                  <IconButton edge="end" aria-label="delete" sx={{color:"#B9C6AE"}} onClick={() => {
                     addProduct(product);
                     handleReRender();
                   }}>
@@ -56,8 +56,8 @@ const Cart = () => {
                 }
               >
                 <ListItemAvatar>
-                  <Avatar>
-                    <ArrowRightAltIcon />
+                  <Avatar sx={{ bgcolor: "#474056" }}>
+                    <ArrowRightAltIcon sx={{ color: "#B9C6AE" }}/>
                   </Avatar>
                 </ListItemAvatar>
                 <ListItemText
@@ -65,13 +65,11 @@ const Cart = () => {
                 />
               </ListItem>)
               }
-
-
             </List>
           </Demo>
         </Box>
         <Link to="/checkout" className="a">
-          <Button variant="outlined" sx={{color: "white", ml: 2, mt: 2}} onClick={() => checkout()} >
+          <Button /* variant="outlined" */ sx={{color: "#8A95A5", ml: 2, mt: 2}} onClick={() => checkout()} >
             <ShoppingCartIcon/> Request purchase
           </Button>
         </Link>
@@ -79,7 +77,7 @@ const Cart = () => {
       );
   } else {
     return (
-      <Typography sx={{ mt: 4, mb: 2, color: "white" }} variant="h6" component="div">Your cart will show up once you select at least one product</Typography>
+      <Typography sx={{ mt: 4, mb: 2, color: "#B9C6AE", fontFamily: 'Abril Fatface' }} variant="h6" component="div">Your cart will show up once you select at least one product</Typography>
     );
   }
 

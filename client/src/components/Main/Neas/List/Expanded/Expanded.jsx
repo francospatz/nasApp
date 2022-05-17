@@ -35,8 +35,8 @@ const Expanded = (props) => {
             addProduct(props.data.designation);
             setAdded(!added);
           }}>
-            <ShoppingCartIcon/>
-            <Typography paragraph sx={{margin: 0}}>{added ? "Remove from cart" : "Add to cart"}</Typography>
+            <ShoppingCartIcon sx={{color: "#757083"}}/>
+            <Typography paragraph sx={{margin: 0, color: "#757083"}}>{added ? "Remove from cart" : "Add to cart"}</Typography>
           </Button>      
           <ExpandMore
             expand={expanded}

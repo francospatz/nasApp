@@ -9,12 +9,10 @@ const useFetch = (url) => {
         async function fetchData() {
             try {
                 const response = await axios.get(url)
-                if(response.data.msg) { // If error in request, result doesn't change
+                if(response.data.msg) { // If error in request, result stays the same
                     setLoading(false)
-                    console.log(response.data)
                 } else {
                     setResult(response.data)
-                    console.log(response.data)
                     setLoading(false)
                 }
             } catch (err) {

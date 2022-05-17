@@ -4,14 +4,13 @@ const landingModules = require('../models/landingsQuerys')
 require('mongoose');
 
 const getAllLandings = async (req, res) => {
-    const allLandings = await LandingModel.find({});
+    const allLandings = await LandingModel.find({}); // finds all landings in db
     res.status(200).json(allLandings);
 }
 
 const getLandingsByQuery = async (req, res) => {
     const mass = parseInt(req.query.mass)
     const { from, to } = req.query;
-    //
     if (mass) {
         try {
             const landings = await landingModules.getLandingsAboveSpecificMass(mass);
@@ -30,7 +29,7 @@ const getLandingsByQuery = async (req, res) => {
         }
 
     }else{
-        res.status(400).json({msg:"Bad request, please input mass, or date from/to."})
+        res.status(400).json({msg:"Bad request"})
     }
 }
 

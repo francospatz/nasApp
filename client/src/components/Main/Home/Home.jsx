@@ -8,13 +8,13 @@ import Typography from '@mui/material/Typography';
 const apiKey = process.env.REACT_APP_NASA_API_KEY;
 
 const Home = () => {
-  const { loading, result } = useFetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
+  const { loading, result } = useFetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`); // request with custom hook useFetch
 
   if (loading) {
     return <p>Loading...</p>
-  } else {
+  } else { //renders when loaded
     return <div className='home-container'>
-      <Card sx={{ maxWidth: 600 }}>
+      <Card sx={{ maxWidth: 600, margin: 1 }}>
         <CardMedia
           component="img"
           height="auto"
@@ -23,15 +23,15 @@ const Home = () => {
         />
       </Card>
       <div className='home__text'>
-        <Typography variant="h3" sx={{ mb: 4, mt: 4, fontWeight: 400, fontStyle: 'italic', color: "white" }}>
+        <Typography variant="h3" sx={{ mb: 4, mt: 4, fontWeight: 400, fontStyle: 'italic', color: "#8A95A5", fontFamily: 'Abril Fatface' }}>
           Picture of the day
         </Typography>
-        <Card sx={{ maxWidth: 600 }}>
+        <Card sx={{ maxWidth: 600, background: "#474056" }}>
           <CardContent>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="#8A95A5">
               {result.explanation}
             </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
+            <Typography variant="body1" color="#8A95A5" sx={{ mt: 2 }}>
               {result.date}
             </Typography>
           </CardContent>

@@ -9,6 +9,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Main = () => {
   const { isAuthenticated } = useAuth0();
+  // renderized routes
   return <main className='main'>
     <Routes>
       <Route element={<Home/>} path='/'></Route>

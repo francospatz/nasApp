@@ -4,10 +4,9 @@ import Paginator from "react-hooks-paginator";
 import Expanded from "./Expanded/";
 import CardHeader from "@mui/material/CardHeader";
 import Avatar from '@mui/material/Avatar';
-import { red } from '@mui/material/colors';
 import { v4 as uuidv4 } from "uuid";
 
-const List = (props) => {
+const List = (props) => { //works exactly how landings list do
   const [offset, setOffset] = useState(0);
   const [currentResult, setCurrentResult] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,12 +35,12 @@ const List = (props) => {
 
   return (
     <div className="list">
-      <Typography variant="h3" color="white" sx={{ mt: 4 }}>
+      <Typography variant="h3" color="#8A95A5" sx={{ mt: 4, fontFamily: 'Abril Fatface', fontStyle: 'italic' }}>
         Neas list
       </Typography>
       <form onSubmit={handleSubmit} className="neas-form">
-        <Typography variant="h5" color="white" sx={{ mt: 4 }}>
-          Search:
+        <Typography variant="h5" color="#8A95A5" sx={{ mt: 4, fontFamily: 'Abril Fatface', fontStyle: 'italic' }}>
+          Search
         </Typography>
         <TextField
           size="small"
@@ -53,7 +52,9 @@ const List = (props) => {
             setOrbitClass(e.target.value)
             setFrom("")
             setTo("")
-          }}></TextField>
+          }}
+          sx={{background: "#8A95A5", color: "#474056"}}
+          ></TextField>
         <TextField
           size="small"
           id="2"
@@ -63,7 +64,8 @@ const List = (props) => {
           onChange={(e) => {
             setFrom(e.target.value)
             setOrbitClass("")
-          }}></TextField>
+          }}
+          sx={{background: "#8A95A5", color: "#474056"}}></TextField>
         <TextField
           size="small"
           id="3"
@@ -73,25 +75,18 @@ const List = (props) => {
           onChange={(e) => {
             setTo(e.target.value)
             setOrbitClass("")
-          }}></TextField>
+          }}
+          sx={{background: "#8A95A5", color: "#474056"}}></TextField>
         <Button type="submit" sx={{ display: "none" }}></Button>
       </form>
-      <Paginator
-        totalRecords={data.length}
-        pageLimit={pageLimit}
-        pageNeighbours={4}
-        setOffset={setOffset}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
       <section className="neas-list">
         {currentResult.map((nea, i) => (
-          <Card sx={{ width: 340, margin: 1 }} key={uuidv4()} >
+          <Card sx={{ width: 340, margin: 1, background: "#B9C6AE" }} key={uuidv4()} >
             <CardHeader
               title={nea.designation}
               subheader={nea.discovery_date}
               avatar={
-                <Avatar sx={{ bgcolor: red[600] }}>
+                <Avatar sx={{ bgcolor: "#474056" }}>
                   N
                 </Avatar>
               }

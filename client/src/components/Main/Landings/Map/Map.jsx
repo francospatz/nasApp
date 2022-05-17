@@ -10,7 +10,7 @@ import { Marker } from "react-leaflet/Marker";
 import { Popup } from "react-leaflet/Popup";
 import * as L from "leaflet";
 
-const StyledMenu = styled((props) => (
+const StyledMenu = styled((props) => ( // MUI styles
   <Menu
     elevation={0}
     anchorOrigin={{
@@ -68,7 +68,7 @@ const Map = (props) => {
     setAnchorEl(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { // handles form submit and changes deps to fetch
     e.preventDefault();
     sendDepsToParent(lClass);
     setShow(true)
@@ -82,7 +82,7 @@ const Map = (props) => {
     options: {},
   });
 
-  const asteroidIcon = new LeafIcon({
+  const asteroidIcon = new LeafIcon({ // custom leaflet marker icon
     iconUrl: require("../../../../static/asteroid.png"),
     iconSize: [14],
   });
@@ -125,10 +125,11 @@ const Map = (props) => {
           aria-controls={open ? "demo-customized-menu" : undefined}
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
-          variant="contained"
+          variant="outlined"
           disableElevation
           onClick={handleClick}
           endIcon={<KeyboardArrowDownIcon />}
+          sx={{ color: "#090C08"}}
         >
           Search
         </Button>
@@ -143,7 +144,7 @@ const Map = (props) => {
           disableAutoFocusItem
         >
           <Typography sx={{ margin: 1.3 }}>Filters will also apply to the list below</Typography>
-          <MenuItem disableRipple onKeyDown={(e) => e.stopPropagation()}>
+          <MenuItem disableRipple onKeyDown={(e) => e.stopPropagation()} >
             <Search />
             <form onSubmit={handleSubmit}>
               <FormControl>
@@ -210,7 +211,7 @@ const Map = (props) => {
                 
               </FormControl>
               <br />
-              <Button onClick={() => props.changeDeps("landings")}>Reset filter</Button>
+              <Button onClick={() => props.changeDeps("landings")} sx={{color: "#474056"}}>Reset filter</Button>
             </form>
           </MenuItem>
         </StyledMenu>
