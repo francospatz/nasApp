@@ -1,8 +1,7 @@
 # 🚀 NasApp
 https://nasappstore.herokuapp.com/
-```
+
 Aplicación web para que, como usuario, puedas explorar Landings y Neas, tanto como solicitar su compra.
-```
 
 # 💻 Librerías back
 ```javascript
